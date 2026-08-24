@@ -1,0 +1,57 @@
+IAM:- Identity and Access management ,Global Service meaning no specific region to be selected
+
+Root account should not be shared
+Users with in the org can only be grouped and one user can beong to multiple groups
+Groups can only contain users not groupsa
+
+Permissions:- 
+Users/Groups can be allowed JSON docs called "POLICIES"
+In AWS we apply the least privilage principle so we give the users minimum permissions not more than a user needs
+
+We can create a IAM user and then login using those creds where we can also have a custom account alias
+for now i have created a IAM user with in the admin group with admin access
+Ankit
+Ankit@240
+https://aws-ankit24-v1.signin.aws.amazon.com/console
+aws-ankit24-v1 (This is the alias)
+
+We can have policiies for different groups or else inline policies for specific single users
+Also two users can inherit two policies if they belong to two different groups
+
+Policies Structure:- AWS IAM policies are JSON documents made up of top-level elements and one or more Statement blocks.
+{
+  "Version": "2012-10-17",
+  "Id": "S3-Account-Permissions",
+  "Statement": [
+    {
+      "Sid": "AllowS3ReadWrite",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:root"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::mybucket/*",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        }
+      }
+    }
+  ]
+}
+
+Top-Level Structure
+
+Version: The IAM policy language version (standard is "2012-10-17").
+Id (Optional): An optional identifier for the overall policy document.
+Statement (Required): An array containing one or more individual permission statements.
+Statement Elements
+Sid (Optional): Statement ID used to describe or distinguish individual statements.
+Effect (Required): Defines whether the statement grants or denies access ("Allow" or "Deny").
+Principal (Required in resource-based policies): Specifies the account, IAM user, role, or federated user allowed or denied access. (Omitted in identity-based policies attached directly to users, groups, or roles).
+Action (Required): The specific AWS API actions being permitted or denied (e.g., "s3:GetObject", "ec2:RunInstances").
+Resource (Required in identity-based policies): The AWS resources (defined via ARN) to which the actions apply (e.g., "arn:aws:s3:::my-bucket/*").
+Condition (Optional): Key-value rules that dictate when the policy is in effect (e.g., IP address restrictions, requiring MFA, or date ranges).

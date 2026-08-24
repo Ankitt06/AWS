@@ -1,0 +1,18 @@
+Cloud Computing:
+It is the on-demand delivery of compute power,database storage, application, and other IT resources.
+pay-as-you-go pricing.
+we can provision exactly the right type and size of computing resources you need.
+can access as many resources as req instantly
+
+Gmail -- email cloud service
+Gdrive -- Storage cloud service
+
+Deployment models of cloud:-
+Private cloud:-  Singel org not exposed to public,complete control,security
+Public Cloud:- Owned by third party
+Hybrid Cloud:- some onpremises some on cloud platform
+
+Types of Cloud Computing:-
+1.IaaS:- Infrastructure as a Service (provide networking,computers and data storage space in its raw form)
+2.PaaS:- Platform as a Service ( just focus on the deployment and management of your applications.)
+3.SaaS:- Software as a Service (completed product that is going to be run and managed by the service provider)

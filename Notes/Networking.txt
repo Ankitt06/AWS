@@ -1,0 +1,13 @@
+Client ---- Network ---- Server
+
+Explanation of client-server architecture.
+Clients have IP address and servers also have ip address using which they communicate  over the network
+
+Key components of servers: CPU, RAM, and long-term storage solutions (databases).
+
+Network: bunch of cables, routers, and servers that are going to be connected with each other
+Router: is a specific device that will forward the data packets between computer in the networks, and they will know where to send your packets on the internet
+switch: will send the packet to the correct clients on your network.
+
+All togather 
+Client ----- Router ---- Switch -----send data to the requiered computer
